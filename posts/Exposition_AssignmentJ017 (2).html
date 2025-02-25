@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-8e00f2f28a1266a720913de837032221.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e3acdd9b67e85dd7c39f851874d9197e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7cfa380d139a4d61a924487b0af32b39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -737,11 +737,6 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\dell\appdata\roaming\pyth
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ProcessPoolExecutor</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>import time from concurrent.futures import ProcessPoolExecutor from tqdm import tqdm</p>
-<section id="function-must-be-at-the-top-level-not-inside-if-name-main" class="level1">
-<h1>Function must be at the top level (not inside if <strong>name</strong> == “<strong>main</strong>”)</h1>
-<p>def compute(x): time.sleep(1) # Simulate work return x**2</p>
-<p>if <strong>name</strong> == “<strong>main</strong>”: # Required for Windows multiprocessing with ProcessPoolExecutor(max_workers=4) as executor: results = list(tqdm(executor.map(compute, range(10)), total=10, desc=“Multiprocessing Example”))</p>
 <p>The outputs while the code runs:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -768,7 +763,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\dell\appdata\roaming\pyth
 <ul>
 <li><strong>Without tqdm(No progress feedback)</strong></li>
 </ul>
-<div id="cell-55" class="cell" data-outputid="27157291-3dcb-4487-b275-ac837d500990">
+<div id="cell-54" class="cell" data-outputid="27157291-3dcb-4487-b275-ac837d500990">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
@@ -786,7 +781,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\dell\appdata\roaming\pyth
 <ul>
 <li><strong>With tqdm(Real-time tracking)</strong></li>
 </ul>
-<div id="cell-59" class="cell" data-outputid="55887426-5e48-4b07-b58b-b3429fc718b2">
+<div id="cell-58" class="cell" data-outputid="55887426-5e48-4b07-b58b-b3429fc718b2">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -814,7 +809,7 @@ Task Done!
 </code></pre>
 <p><strong>✔ Progress bar updates in real-time.</strong></p>
 <p><strong>2. File Downlaod Progress:</strong></p>
-<div id="cell-64" class="cell" data-outputid="7424f95e-60fc-487b-b804-e77c173d3310">
+<div id="cell-63" class="cell" data-outputid="7424f95e-60fc-487b-b804-e77c173d3310">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
@@ -842,7 +837,7 @@ Downloading: 100%|██████████| 10M/10M [00:10&lt;00:00,  1.0M
 </code></pre>
 <p><strong>✔ Shows real-time file download progress.</strong></p>
 <p><strong>3. Processing a Large Dataset(pandas):</strong></p>
-<div id="cell-69" class="cell" data-outputid="9c1503b9-5985-4dc3-92ef-35d76f15bb8c">
+<div id="cell-68" class="cell" data-outputid="9c1503b9-5985-4dc3-92ef-35d76f15bb8c">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -858,7 +853,7 @@ Downloading: 100%|██████████| 10M/10M [00:10&lt;00:00,  1.0M
 <pre><code>Processing Data: 100%|██████████| 1000/1000 [00:00&lt;00:00, 119720.96it/s]</code></pre>
 <p><strong>✔ Shows how many rows have been processed.</strong></p>
 <p><strong>4. Multi-threading with tqdm:</strong></p>
-<div id="cell-72" class="cell" data-outputid="82ff5d76-cecc-4d43-cd06-64835871b27a">
+<div id="cell-71" class="cell" data-outputid="82ff5d76-cecc-4d43-cd06-64835871b27a">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ThreadPoolExecutor</span>
@@ -878,7 +873,7 @@ Downloading: 100%|██████████| 10M/10M [00:10&lt;00:00,  1.0M
 </code></pre>
 <p><strong>✔ Tracks the progress of multi-threaded tasks.</strong></p>
 <p><strong>5. Nested Progress Bars:</strong></p>
-<div id="cell-75" class="cell" data-outputid="fe9d1ee8-0770-4453-aed4-3f3e867f05ca">
+<div id="cell-74" class="cell" data-outputid="fe9d1ee8-0770-4453-aed4-3f3e867f05ca">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> trange</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -923,7 +918,7 @@ Outer Loop: 100%|██████████| 3/3 [00:03&lt;00:00,  1.00s/it]
 <p><strong>Common Tqdm Issues and Solutions</strong> <strong>:</strong></p>
 <p>Progress Bar Not Updating A common issue with tqdm is the progress bar not updating, often due to output buffering, especially in Jupyter Notebooks. To fix this, use tqdm.notebook, which provides a GUI-based progress bar with color-coded status indicators: blue (normal), green (completed), and red (interrupted/error).</p>
 <p>Flushing the Output Stream Another solution is explicitly flushing the output stream to ensure real-time updates. By using sys.stdout.flush(), you force the buffered output to display immediately, preventing delays. However, frequent flushing may introduce performance overhead.</p>
-<div id="cell-78" class="cell" data-outputid="f58a23ec-2aa5-4923-fb6f-f4d28cacc792">
+<div id="cell-77" class="cell" data-outputid="f58a23ec-2aa5-4923-fb6f-f4d28cacc792">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
@@ -961,7 +956,6 @@ Outer Loop: 100%|██████████| 3/3 [00:03&lt;00:00,  1.00s/it]
 </ol>
 
 
-</section>
 
 </main> <!-- /main -->
 <script type="application/vnd.jupyter.widget-state+json">
